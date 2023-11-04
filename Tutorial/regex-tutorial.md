@@ -50,7 +50,47 @@ The `{2,6}` quantifier is used after the character class `[a-z\.]` in the third 
 
 Putting it all together, the regular expression `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/` matches a valid email address that starts with one or more lowercase letters, digits, underscores, dots, or hyphens, followed by the `@` symbol, followed by one or more digits, lowercase letters, dots, or hyphens, followed by a period and a two to six letter top-level domain.
 
-### Grouping Constructs
+## Grouping Constructs
+Grouping constructs in regular expressions(regex) are used to group together one or more characters or sub-expressions, and treat them as a single unit within the expression. They are enclosed among the parentheses `()` and serve the following purposes:
+
+- Applying quantifiers to a group of characters.
+- Capturing a the designated part part of the match for later use.
+- Creating backreference for previously matched group.
+- Applying alternation to a group of characters
+
+Our **regex featured in this tutorial:** `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/` contains three (3) `Grouping Constructs` enlcosed among the parentheses `()`. Each group captures a different part of the email address: the 1. Local-Part, 2. Domain, and 3. Top-level Domain.
+
+Firstly, the 'Local-Part' `([a-z0-9_\.-]+)` matches the username of the email address. Secondly, the 'Domain' `([\da-z\.-]+)` corresponds and matches the domian name. Thirdly, the 'Top-Level Domain' `([a-z\.]{2,6})` aligns and matches the top-level domain. Furthering our distinction of the three (3) `Grouping Constructs`, a comprehensive breakdown of the following has been provdided below for your review:
+
+### 1. Local-Part:
+Firstly, the `([a-z0-9_\.-]+)` matches the username of the email address.
+
+The group represents the local-part of the email address which helps to ensure that the username follows a valid format (the part before the `@` symbol) and matches one or more characters that can be:
+* Lowercase letters: `a-z`
+* Numbers: `0-9`
+* Underscores: `_`
+* Dots: `.`
+* Hyphens: `-`
+
+### 2. Domain:
+Secondly, `([\da-z\.-]+)` corresponds and matches the 'Domain' name.
+
+The group represents the domain of the email address (the part between the `@` symbol and the final period `.`). This helps to ensure that the domain name follows a valid format and matches one or more characters that can be:
+* Numbers: `\d`
+* Lowercase letters: `a-z`
+* Dots: `.`
+* Hyphens: `-`
+
+### 3. Top-Level Domain:
+Thirdly, `([a-z\.]{2,6})` aligns and matches the 'Top-Level Domain'.
+
+The group represents the 'Top-Level Domain' of the email address (the part after the final period `.`). This helps to ensure that only the valid top-level domains are accepted and matches between 2 to 6 characters that can be:
+* Lowercase letters: `a-z`
+* Dots: `.`
+
+**Conclusion:** The above `Grouping Constructs` are useful for capturing specific parts of the matched email address, which can then be accessed or manipulated separately. Example: regular expression(regex) validates email addresses, username and domain name can then be independently obtained and assessed for accuracy, the top-level domain can then be used to ensure only accuractly sourced domain extensions are accepted.
+
+In conclusion, `Grouping Constructs` effectively group characters and sub-expressions together, in order to perform operations on them collectively as a single unit. Thus, allowing the use of complex and flexibly adapted regular expressions(regex).
 
 ### Bracket Expressions
 
