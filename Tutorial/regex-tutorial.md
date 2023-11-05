@@ -150,7 +150,21 @@ The OR operator, also known as alternation, is a crucial concept in regular expr
 
 Crucial for functioning with regular expressions, the OR operator allows the creation of flexible and adaptable patterns. Although it is not explicitly used in our featured email regex, the OR-Operator remains a key concept for those learning and utilizing regular expressions in various applications among their studies.
 
-### Flags
+## Flags
+Flags are modifiers which affect the behavior of regular expressions(regex) by enabling or disabling certain features and are appended to the end of the regex pattern, outside the slashes `/`.
+
+Though our **regex featured in this tutorial:** `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/` does not use flags, it's important to understand its purpose in regex patterns. Flags are used to control case sensitivity, multiline matching, and global matching. I would advise for any new-comer to learn more about flags, so you are able to enhance your regex knowledge.
+
+### Flag tpes you may find in future use:
+1. `g` (global): Enables global matching, regex engine will find all matches in the input string.
+2. `i` (ignore case): Enables the regex case-insensitive, matching both uppercase and lowercase characters.
+3. `m` (multiline): Enables start `(^)` and end `($)` anchors to match at the beginning and end of each line in a multiline string, rather than just the beginning and end of the entire string.
+4. `s` (dotAll): Enables dot `.` metacharacter match any character, including newline characters.
+5. `u` (unicode): Treats input string as Unicode, enables correct processes of Unicode surrogate pairs.
+6. `y` (sticky): Mandates regex engine ro iniate searching for a match at the exact position specified by the lastIndex property.
+
+We're able to conclude this section by saying are essential in modifying the behavioir of patterns found among regex. Although it is not utilized in our **regex featured in this tutorial** `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`, understanding the use of flags will enhance your use regex patterns to accommodate varrying requirements and situations.
+
 
 ### Character Escapes
 
