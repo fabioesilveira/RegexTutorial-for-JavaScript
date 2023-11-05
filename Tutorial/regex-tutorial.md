@@ -92,7 +92,34 @@ The group represents the 'Top-Level Domain' of the email address (the part after
 
 In conclusion, `Grouping Constructs` effectively group characters and sub-expressions together, in order to perform operations on them collectively as a single unit. Thus, allowing the use of complex and flexibly adapted regular expressions(regex).
 
-### Bracket Expressions
+## Bracket Expressions
+Bracket expressions are a fundamental concept in regular expressions(regex), used to define a set of characters that can be matched within a single position in a text string. They are denoted by square brackets [...], and any character enclosed within these brackets will become a part of the allowed set. Bracket expressions can contain individual characters, and even define character ranges using a hyphen `-`, such as `a-z` for all lowercase letters or `0-9` for digits. But, what's the purpose? Simply, the bracket expressions, creates flexible patterns that match various combinations of characters in your target text.
+
+In our **regex featured in this tutorial:** `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/` there are three (3) main bracket expressions:
+
+### Bracket Expression: One (1)
+The bracket expression `[a-z0-9_\.-]` matches any single character in the range `a-z`, `0-9`, or one of the characters `_`, `.`, or `-`. Thus the expression is used to match the `Grouping Constructs: local part` the username part of the email address. Here's the breakdown of this expression:
+- `a-z`: Matches lowercase letter from `a` to `z`.
+- `0-9`: Matches digit from `0` to `9`.
+- `_`: Matches underscore character.
+- `\.`: Matches literal period (dot) character. The backslash is used to escape the dot since it has a special meaning in regex.
+- `-`: Matces the hyphen character.
+
+### Bracket Expression: Two (2)
+The bracket expression `\da-z\.-` matches any single character in the range `0-9`, `a-z`, or one of the characters `.`, or `-`. Thus the expression is used to match the `Grouping Constructs: domain` part of the email address. Here's the breakdown of this expression:
+
+- `\d`: Matches digit from `0` to `9`. This is a shorthand for `[0-9]`.
+- `a-z`: Matches lowercase letter from `a` to `z`.
+- `\.`: Matches the literal period (dot) character.
+- `-`: Matches hyphen character.
+### Bracket Expression: Three (3)
+The bracket expression `[a-z\.]{2,6}` matches any single character in the range `a-z` or the literal period (dot) character. The expression is then followed by a quantifier `{2,6}`, which specifies that the matched characters must occur between `2 and 6` times, inclusive. Thus used to match the `Grouping Constructs: top-level domain` of the email address. Here's the breakdown of this expression:
+
+- `a-z`: Matches lowercase letter from 'a' to 'z'.
+- `\.`: Matches literal period (dot) character.
+- `{2,6}`: Matches quantifier that specifies the number of times the preceding expression (i.e., `[a-z\.]`) must be matched, which is between `2 and 6` times, inclusive.
+
+In brief, our featured regex `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/` efficiently matches valid email addresses by utilizing bracket expressions to define character sets for the username, domain, and top-level domain parts of the email as we discussed earlier. These bracket expressions combined with other regex components, ensures proper structure and formality for email addresses, making it a valuable tool in a variety of applications.
 
 ### Character Classes
 
