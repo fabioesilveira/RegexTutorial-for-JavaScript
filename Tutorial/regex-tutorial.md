@@ -1,10 +1,10 @@
-# Title (replace with your title)
+# Coordinating an Email: Understanding the Components. 
 
-Introductory paragraph (replace this with your text)
+Comprehensive tutorial on coordinating an email with regular expressions (regex) using JavaScript in the field of Computer Science. In this tutorial, we will dive into email regex, breaking down the components of a regex pattern designed to validate email addresses and explaining how each part contributes to ensuring accurate and reliable email validation.
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+Throughout this tutorial, the featured regular expression (regex) as seen below, will be referenced for analysis in regards to each regex component to ensure new-comers and academics alike are able to understand and grasp material with absolute clarity. The regex components discussed in this document include: anchors, quantifiers, grouping constructs, bracket expressions, character classes, the OR operator, flags, and character escapes.
 
 ## Table of Contents
 
@@ -16,6 +16,8 @@ Briefly summarize the regex you will be describing and what you will explain. In
 - [The OR Operator](#the-or-operator)
 - [Flags](#flags)
 - [Character Escapes](#character-escapes)
+- [Email Validation Conclusion](#email-validation-conclusion)
+- [Author](#author)
 
 ## Regex Components
 
@@ -198,4 +200,8 @@ By combining these components, the regex ensures proper structure and formality 
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+This tutorial is written by Fabio Silveira.
+
+Please visit my github profile page at [Fabio Silveira](https://github.com/fabioesilveira) and take a look at my previous projects.
+
+
